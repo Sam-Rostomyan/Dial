@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dial New</title>
+   <!-- swipper css -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+   <!-- Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
+   <!-- css -->
+   <link rel="stylesheet" href="scss/index/index.css">
+</head>
+<body>
+   
+   <div class="modal" id="appointmentModal">
+      <div class="modal__content">
+         <img class="close-modal" src="images/closeModal.svg" alt="modal close" onclick="closeModal('#appointmentModal')">
+         
+         <h3 class="modal__title">Оставьте заявку — поможем разобраться с вашими задачами</h3>
+         <form action="">
+            <div class="modal__form">
+               <input class="modal__inp inp-name" type="text" placeholder="Ваше имя">
+               <input class="modal__inp inp-tel" type="number" placeholder="Ваш телефон">
+               <textarea class="modal__textarea textarea" name="" placeholder="Ваша задача"></textarea>
+               <div class="modal__request">
+                  <div class="modal__request-btns">
+                     <button class="modal__request-btn" type="submit">оставить заявку</button>
+                     <a class="modal__request-link" href="#">
+                        <img class="link-arrow-img" src="images/linkArrow.svg" alt="arrow">
+                     </a>
+                  </div>
+                  <p class="modal__request-text">Нажимая кнопку "Оставить заявку" я даю согласие на обработку персональных данных</p>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+
+   <nav class="navbar">
+      <div class="navbar__content container">
+         <a class="navbar__logo" href="#">
+            <img class="navbar__logo_img" src="images/logo.svg" alt="logo">
+            <span class="navbar__logo_text">международное агентство полного цикла</span>
+         </a>
+
+         <div class="navbar__menu" id="navbar-menu">
+            <div>
+               <div class="mobile-menu">
+                  <ul class="navbar__menu_item">
+                     <li>
+                        <a class="navbar__menu_link" href="#">Услуги</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">Кейсы</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">Акции</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">Блог</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">Новости</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">О компании</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">Контакты</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+
+            <a class="navbar__phoneNumber" href="tel:8(800)7758343">8 (800) 775 83 43</a>
+            <button class="navbar__requestCall" type="button" onclick="openModal('#appointmentModal')">заказать звонок</button>
+            
+            <div class="navbar__socials">
+               <a class="navbar__socials_link whatsapp" href="#">
+                  <img class="whatsapp-img" src="images/whatsappIcon.svg" alt="whatsApp">
+               </a>
+               <a class="navbar__socials_link viber" href="#">
+                  <img class="viber-img" src="images/viberIcon.svg" alt="viber">
+               </a>
+               <button class="navbar__socials_btn" type="button">
+                  <img class="user-img" src="images/navbraUserIcon.svg" alt="user">
+               </button>
+            </div>
+         </div>
+
+         <button class="navbar__mobileIcon" type="button" onclick="openModal('#appointmentModal')">
+            <img src="images/navbarMobilePhone.png" alt="mobile icon">
+         </button>
+         <button class="burger-btn" type="button" onclick="burgerTggle('.burger-btn')">
+            <img class="open-menu" src="images/burgerIcon.svg" alt="burger icon" onclick="burgerOpen('#navbar-menu')">
+            <img class="close-menu" src="images/closeBurger.svg" alt="burger icon" onclick="burgerClose('#navbar-menu')">
+         </button>
+      </div>
+   </nav>
+
+   <div class="container">
+      <a class="crumbs" href="services.html">Услуги</a>
+   </div>
+
+   <header class="header">
+      <div class="container">
+         <h1 class="header__title">Создание индивидуальных сайтов под ключ </h1>
+         <p class="header__text">Наша страсть делать крутые проекты. Быстро и качественно</p>
+         <div class="header__content">
+            <div class="header__included">
+               <h2 class="header__included_title">Что входит</h2>
+               <p class="header__included_text">Вам не понадобится докупать услуги, этого комплекса хватит для достижения высокоэффективных результатов</p>
+            </div>
+            <div class="header__info">
+               <h3 class="header__info_title">Проектирование</h3>
+               <p class="header__info_text">Составим подробное ТЗ, соберем всю необходимую информацию от клиента и подготовим макет нового сайта</p>
+            </div>
+            <div class="header__info">
+               <h3 class="header__info_title">Дизайн и верстка</h3>
+               <p class="header__info_text">Отрисовка и согласование дизайна вашего сайта с использованием самых современных решений. Верстка всех страниц и программирование функционала сайта. Подключение и настройка всех необходимых модулей</p>
+            </div>
+            <div class="header__peoples">
+               <h3 class="header__peoples_title">7 человек</h3>
+               <p class="header__peoples_text">Будут работать над вашим проектом</p>
+            </div>
+            <div class="header__info">
+               <h3 class="header__info_title">Тестирование</h3>
+               <p class="header__info_text">Полная проверка готового сайта на корректность работы всех страниц, форм и другого функционала. Финальные доработки по проекту</p>
+            </div>
+            <div class="header__info">
+               <h3 class="header__info_title">Запуск</h3>
+               <p class="header__info_text">Размещение готового сайта на выбранном домене, настройка хостинга и всей необходимой инфраструктуры. Передача клиенту всех доступов и документации по сайту</p>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <main>
+      <section class="prices container">
+         <h2 class="prices__title">Сколько это стоит</h2>
+         <!-- Swiper -->
+         <div class="swiper" id="prices__slider">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                  <div class="prices__item">
+                     <div class="prices__item_content">
+                        <div>
+                           <span class="prices__item_tariff">01 Тариф</span>
+                           <h3 class="prices__item_title">Сайт-визитка</h3>
+                           <p class="prices__item_text">Небольшой сайт направленный на ознакомление потенциальных клиентов с вашими услугами. Содержит всю необходимую информацию, фотографии и контакты. Прекрасно подходит как основной сайт компании</p>
+                        </div>
+                        <div>
+                           <span class="prices__item_price">от 65 000 ₽</span>
+                           <button class="prices__item_btn" type="button">Заказать</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="prices__item">
+                     <div class="prices__item_content">
+                        <div>
+                           <span class="prices__item_tariff">02 Тариф</span>
+                           <h3 class="prices__item_title">Landing page</h3>
+                           <p class="prices__item_text">Сайт направленный на совершения конкретного действия. Покупки товара, регистрации на мероприятие или заказа услуги. Структурно вся информация на сайте направлена только на одно действие — получения лида.</p>
+                        </div>
+                        <div>
+                           <span class="prices__item_price">от 45 000 ₽</span>
+                           <button class="prices__item_btn" type="button">Заказать</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="prices__item">
+                     <div class="prices__item_content">
+                        <div>
+                           <span class="prices__item_tariff">03 Тариф</span>
+                           <h3 class="prices__item_title">Сайт каталог</h3>
+                           <p class="prices__item_text">Большой многостраничный сайт, который содержит исчерпывающую информацию о вашем товаре. Прекрасная альтернатива громоздкому шоу-руму в торговом центре.</p>
+                        </div>
+                        <div>
+                           <span class="prices__item_price">от 75 000 ₽</span>
+                           <button class="prices__item_btn" type="button">Заказать</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="prices__item">
+                     <div class="prices__item_content">
+                        <div>
+                           <span class="prices__item_tariff">04 Тариф</span>
+                           <h3 class="prices__item_title">Сайт-визитка</h3>
+                           <p class="prices__item_text">Небольшой сайт направленный на ознакомление потенциальных клиентов с вашими услугами. Содержит всю необходимую информацию, фотографии и контакты. Прекрасно подходит как основной сайт компании</p>
+                        </div>
+                        <div>
+                           <span class="prices__item_price">от 65 000 ₽</span>
+                           <button class="prices__item_btn" type="button">Заказать</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="prices__item">
+                     <div class="prices__item_content">
+                        <div>
+                           <span class="prices__item_tariff">05 Тариф</span>
+                           <h3 class="prices__item_title">Landing page</h3>
+                           <p class="prices__item_text">Сайт направленный на совершения конкретного действия. Покупки товара, регистрации на мероприятие или заказа услуги. Структурно вся информация на сайте направлена только на одно действие — получения лида.</p>
+                        </div>
+                        <div>
+                           <span class="prices__item_price">от 45 000 ₽</span>
+                           <button class="prices__item_btn" type="button">Заказать</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="prices__item">
+                     <div class="prices__item_content">
+                        <div>
+                           <span class="prices__item_tariff">06 Тариф</span>
+                           <h3 class="prices__item_title">Сайт каталог</h3>
+                           <p class="prices__item_text">Большой многостраничный сайт, который содержит исчерпывающую информацию о вашем товаре. Прекрасная альтернатива громоздкому шоу-руму в торговом центре.</p>
+                        </div>
+                        <div>
+                           <span class="prices__item_price">от 75 000 ₽</span>
+                           <button class="prices__item_btn" type="button">Заказать</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="prices__arrowBtns">
+            <button type="button" class="prev swiper-button-prev" id="pricesPrev">
+                <img src="images/sliderLeftArrow.svg" alt="Prev">
+            </button>
+            <button type="button" class="next swiper-button-next" id="pricesNext">
+                <img src="images/sliderRightArrow.svg" alt="Next">
+            </button>
+         </div>
+      </section>
+
+      <section class="whatGet">
+         <div class="container">
+            <h2 class="whatGet__title">Что еще вы получите</h2>
+            <div class="whatGet__content">
+               <div class="whatGet__desc">
+                  <div class="whatGet__item">
+                     <img class="whatGet__item_img" src="images/whatgetItemIMG1.svg" alt="img 1">
+                     <h4 class="whatGet__item_title">Личный кабинет клиента</h4>
+                     <p class="whatGet__item_text">Уникальная разработка компании, в рамках кабинета вы сможете контролировать ход работ, общаться со специалистами, обмениваться бухгалтерскими документами.</p>
+                  </div>
+                  <div class="whatGet__item">
+                     <img class="whatGet__item_img" src="images/whatgetItemIMG2.svg" alt="img 2">
+                     <h4 class="whatGet__item_title">Квалифицированные сотрудники</h4>
+                     <p class="whatGet__item_text">Уникальная внутренняя система обучения специалистов и контроль качества на всех этапах.</p>
+                  </div>
+                  <div class="whatGet__item">
+                     <img class="whatGet__item_img" src="images/whatgetItemIMG3.svg" alt="img 3">
+                     <h4 class="whatGet__item_title">Выполнение работ под ключ</h4>
+                     <p class="whatGet__item_text">Мы берем на себя все обязательства по проекту, от первоначального брифинга до передачи всех ключей и доступов от сайта</p>
+                  </div>
+                  <div class="whatGet__item">
+                     <img class="whatGet__item_img" src="images/whatgetItemIMG4.svg" alt="img 4">
+                     <h4 class="whatGet__item_title">Большая работа над проектом</h4>
+                     <p class="whatGet__item_text">По каждому проекту выполняется обширный чек-лист, что гарантирует качество и объем выполняемых работ.</p>
+                  </div>
+               </div>
+               <div class="whatGet__consultation">
+                  <h3 class="whatGet__consultation_title">Получить консультацию</h3>
+                  <p class="whatGet__consultation_text">Оставьте свои данные и наш специалист ответит на интересующие вас вопросы</p>
+                  <input class="whatGet__consultation_inp" type="text" placeholder="Ваш телефон">
+                  <p class="whatGet__consultation_inpText">Нажимая кнопку "Оставить заявку" я даю согласие на обработку персональных данных</p>
+                  <button class="whatGet__consultation_btn">Заказать</button>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section class="cases">
+         <div class="container">
+            <h2 class="cases__title">Кейсы</h2>
+            <div class="cases__btns">
+               <button class="cases__btns_btn active" onclick="tabs('cases__btns_btn','cases__tab', this, 'cases-tab1')">Все</button>
+               <button class="cases__btns_btn" onclick="tabs('cases__btns_btn','cases__tab', this, 'cases-tab2')">Спорт и здоровье</button>
+               <button class="cases__btns_btn" onclick="tabs('cases__btns_btn','cases__tab', this, 'cases-tab3')">Юридические услуги</button>
+               <button class="cases__btns_btn" onclick="tabs('cases__btns_btn','cases__tab', this, 'cases-tab4')">Юридические услуги</button>
+               <button class="cases__btns_btn" onclick="tabs('cases__btns_btn','cases__tab', this, 'cases-tab5')">Производство</button>
+               <button class="cases__btns_btn" onclick="tabs('cases__btns_btn','cases__tab', this, 'cases-tab6')">Строительство и ремонт</button>
+            </div>
+            <div class="cases__tab active" id="cases-tab1">
+               <div class="cases__item bg-red">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили трафик на 940% для интернет-магазина торгового оборудования</p>
+               </div>
+               <div class="cases__item bg-darkBlue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для фабрики упаковки </p>
+               </div>
+               <div class="cases__item bg-pink">
+                  <h6 class="cases__item_title">SEO</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для интернет-магазина букетов и растений</p>
+               </div>
+               <div class="cases__item bg-blue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили конверсию на 240% при снижении стоимости лида на 41% для интернет-магазина запчестей автодомов</p>
+               </div>
+               <div class="cases__item bg-brown">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили количество лидов на 97% для строительной компании</p>
+               </div>
+               <div class="cases__item bg-black">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Снизили CPA на 896 рублей для Тульскиого завода цепей</p>
+               </div>
+            </div>
+            <div class="cases__tab" id="cases-tab2">
+               <div class="cases__item bg-red">
+                  <h6 class="cases__item_title">2. Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили трафик на 940% для интернет-магазина торгового оборудования</p>
+               </div>
+               <div class="cases__item bg-darkBlue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для фабрики упаковки </p>
+               </div>
+               <div class="cases__item bg-pink">
+                  <h6 class="cases__item_title">SEO</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для интернет-магазина букетов и растений</p>
+               </div>
+               <div class="cases__item bg-blue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили конверсию на 240% при снижении стоимости лида на 41% для интернет-магазина запчестей автодомов</p>
+               </div>
+               <div class="cases__item bg-brown">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили количество лидов на 97% для строительной компании</p>
+               </div>
+               <div class="cases__item bg-black">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Снизили CPA на 896 рублей для Тульскиого завода цепей</p>
+               </div>
+            </div>
+            <div class="cases__tab" id="cases-tab3">
+               <div class="cases__item bg-red">
+                  <h6 class="cases__item_title">3. Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили трафик на 940% для интернет-магазина торгового оборудования</p>
+               </div>
+               <div class="cases__item bg-darkBlue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для фабрики упаковки </p>
+               </div>
+               <div class="cases__item bg-pink">
+                  <h6 class="cases__item_title">SEO</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для интернет-магазина букетов и растений</p>
+               </div>
+               <div class="cases__item bg-blue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили конверсию на 240% при снижении стоимости лида на 41% для интернет-магазина запчестей автодомов</p>
+               </div>
+               <div class="cases__item bg-brown">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили количество лидов на 97% для строительной компании</p>
+               </div>
+               <div class="cases__item bg-black">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Снизили CPA на 896 рублей для Тульскиого завода цепей</p>
+               </div>
+            </div>
+            <div class="cases__tab" id="cases-tab4">
+               <div class="cases__item bg-red">
+                  <h6 class="cases__item_title">4. Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили трафик на 940% для интернет-магазина торгового оборудования</p>
+               </div>
+               <div class="cases__item bg-darkBlue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для фабрики упаковки </p>
+               </div>
+               <div class="cases__item bg-pink">
+                  <h6 class="cases__item_title">SEO</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для интернет-магазина букетов и растений</p>
+               </div>
+               <div class="cases__item bg-blue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили конверсию на 240% при снижении стоимости лида на 41% для интернет-магазина запчестей автодомов</p>
+               </div>
+               <div class="cases__item bg-brown">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили количество лидов на 97% для строительной компании</p>
+               </div>
+               <div class="cases__item bg-black">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Снизили CPA на 896 рублей для Тульскиого завода цепей</p>
+               </div>
+            </div>
+            <div class="cases__tab" id="cases-tab5">
+               <div class="cases__item bg-red">
+                  <h6 class="cases__item_title">5. Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили трафик на 940% для интернет-магазина торгового оборудования</p>
+               </div>
+               <div class="cases__item bg-darkBlue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для фабрики упаковки </p>
+               </div>
+               <div class="cases__item bg-pink">
+                  <h6 class="cases__item_title">SEO</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для интернет-магазина букетов и растений</p>
+               </div>
+               <div class="cases__item bg-blue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили конверсию на 240% при снижении стоимости лида на 41% для интернет-магазина запчестей автодомов</p>
+               </div>
+               <div class="cases__item bg-brown">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили количество лидов на 97% для строительной компании</p>
+               </div>
+               <div class="cases__item bg-black">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Снизили CPA на 896 рублей для Тульскиого завода цепей</p>
+               </div>
+            </div>
+            <div class="cases__tab" id="cases-tab6">
+               <div class="cases__item bg-red">
+                  <h6 class="cases__item_title">6. Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили трафик на 940% для интернет-магазина торгового оборудования</p>
+               </div>
+               <div class="cases__item bg-darkBlue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для фабрики упаковки </p>
+               </div>
+               <div class="cases__item bg-pink">
+                  <h6 class="cases__item_title">SEO</h6>
+                  <p class="cases__item_text">Увеличили целевой трафик в 2,3 раза для интернет-магазина букетов и растений</p>
+               </div>
+               <div class="cases__item bg-blue">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили конверсию на 240% при снижении стоимости лида на 41% для интернет-магазина запчестей автодомов</p>
+               </div>
+               <div class="cases__item bg-brown">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Увеличили количество лидов на 97% для строительной компании</p>
+               </div>
+               <div class="cases__item bg-black">
+                  <h6 class="cases__item_title">Контекстная реклама</h6>
+                  <p class="cases__item_text">Снизили CPA на 896 рублей для Тульскиого завода цепей</p>
+               </div>
+            </div>
+            <button class="cases__btn">все кейсы</button>
+         </div>
+      </section>
+
+      <section class="workConstruction container">
+         <div class="workConstruction__content">
+            <div>
+               <h2 class="workConstruction__title">Как строится работа</h2>
+               <div class="workConstruction__btns">
+                  <button class="workConstruction__btns_btn">01. Составление ТЗ</button>
+                  <button class="workConstruction__btns_btn">02. Дизайн и верстка</button>
+                  <button class="workConstruction__btns_btn">03. Программирование</button>
+                  <button class="workConstruction__btns_btn">04. Релиз</button>
+               </div>
+            </div>
+            <div class="workConstruction__desc">
+               <div class="workConstruction__desc_info">
+                  <span class="workConstruction__desc_step">Шаг 01</span>
+                  <h3 class="workConstruction__desc_title">Составление ТЗ</h3>
+                  <ul class="workConstruction__desc_item">
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">01.</span>
+                        <span class="workConstruction__desc_list-text">Подробный брифинг клиента</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">02.</span>
+                        <span class="workConstruction__desc_list-text">Определяемся с типом разрабатываемого сайта и всеми необходимыми блоками</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">03.</span>
+                        <span class="workConstruction__desc_list-text">Составление списка работ по сайту</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">04.</span>
+                        <span class="workConstruction__desc_list-text">Определение сроков и целей</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">05.</span>
+                        <span class="workConstruction__desc_list-text">Прописываем всю информацию в договоре</span>
+                     </li>
+                  </ul>
+               </div>
+               <div class="workConstruction__desc_info">
+                  <span class="workConstruction__desc_step">Шаг 02</span>
+                  <h3 class="workConstruction__desc_title">Дизайн и верстка</h3>
+                  <ul class="workConstruction__desc_item">
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">01.</span>
+                        <span class="workConstruction__desc_list-text">Cоздание макета сайта</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">02.</span>
+                        <span class="workConstruction__desc_list-text">Cогласование макета с заказчиком</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">03.</span>
+                        <span class="workConstruction__desc_list-text">Hазработка элементов интерфейса сайта</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">04.</span>
+                        <span class="workConstruction__desc_list-text">Проектирование навигации и логики сайта</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">05.</span>
+                        <span class="workConstruction__desc_list-text">Проработка дизайна с учетом пожеланий заказчика</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">06.</span>
+                        <span class="workConstruction__desc_list-text">Верстка сайта</span>
+                     </li>
+                  </ul>
+               </div>
+               <div class="workConstruction__desc_info">
+                  <span class="workConstruction__desc_step">Шаг 03</span>
+                  <h3 class="workConstruction__desc_title">Программирование</h3>
+                  <ul class="workConstruction__desc_item">
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">01.</span>
+                        <span class="workConstruction__desc_list-text">Создание всех необходимых страниц сайта</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">02.</span>
+                        <span class="workConstruction__desc_list-text">Настройка работы блоков сайта</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">03.</span>
+                        <span class="workConstruction__desc_list-text">Расстановка и тестирование ссылок</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">04.</span>
+                        <span class="workConstruction__desc_list-text">Настройка административного интерфейса</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">05.</span>
+                        <span class="workConstruction__desc_list-text">Проверка работоспособности всех элементов сайта</span>
+                     </li>
+                  </ul>
+               </div>
+               <div class="workConstruction__desc_info">
+                  <span class="workConstruction__desc_step">Шаг 04</span>
+                  <h3 class="workConstruction__desc_title">Релиз</h3>
+                  <ul class="workConstruction__desc_item">
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">01.</span>
+                        <span class="workConstruction__desc_list-text">Наполнение готового сайта контентом</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">02.</span>
+                        <span class="workConstruction__desc_list-text">Перенос сайта на выбранный домен и хостинг</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">03.</span>
+                        <span class="workConstruction__desc_list-text">Проверка корректности отображения в различных браузерах</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">04.</span>
+                        <span class="workConstruction__desc_list-text">Проверка корректности отображения на мобильных устройствах</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">05.</span>
+                        <span class="workConstruction__desc_list-text">Выявление и исправление всех проблем</span>
+                     </li>
+                     <li class="workConstruction__desc_list">
+                        <span class="workConstruction__desc_list-number">06.</span>
+                        <span class="workConstruction__desc_list-text">Сдача проекта заказчику</span>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section class="technology">
+         <div class="container">
+            <div class="technology__content">
+               <div>
+                  <h2 class="technology__title">Мы используем технологии</h2>
+                  <a class="technology__link" href="#">наши Сертификаты</a>
+               </div>
+               <div class="technology__info">
+                  <ul class="technology__item">
+                     <li class="technology__item_title">UX/UI</li>
+                     <li class="technology__item_list">Аналитика и исследования</li>
+                     <li class="technology__item_list">Проектирование</li>
+                     <li class="technology__item_list">Дизайн</li>
+                     <li class="technology__item_list">Figma</li>
+                     <li class="technology__item_list">Adobe Photoshop</li>
+                     <li class="technology__item_list">Adobe Illustrator</li>
+                  </ul>
+                  <ul class="technology__item">
+                     <li class="technology__item_title">Front-end</li>
+                     <li class="technology__item_list">HTML5</li>
+                     <li class="technology__item_list">Javascript</li>
+                     <li class="technology__item_list">JQuery</li>
+                     <li class="technology__item_list">CSS</li>
+                     <li class="technology__item_list">PHP</li>
+                     <li class="technology__item_list">БЭМ</li>
+                  </ul>
+                  <ul class="technology__item">
+                     <li class="technology__item_title">Back-end</li>
+                     <li class="technology__item_list">PHP</li>
+                     <li class="technology__item_list">Javascript</li>
+                     <li class="technology__item_list">JQuery</li>
+                  </ul>
+                  <ul class="technology__item">
+                     <li class="technology__item_title">CMS</li>
+                     <li class="technology__item_list">1C-Битрикс</li>
+                     <li class="technology__item_list">ModX</li>
+                     <li class="technology__item_list">Wordpress</li>
+                     <li class="technology__item_list">Tilda</li>
+                     <li class="technology__item_list">Битрикс24</li>
+                  </ul>
+                  <ul class="technology__item">
+                     <li class="technology__item_title">СУБД</li>
+                     <li class="technology__item_list">MySQL</li>
+                  </ul>
+                  <ul class="technology__item">
+                     <li class="technology__item_list">Web servers</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+      
+      <section class="workUs container">
+         <h2 class="workUs__title">С нами работают</h2>
+         <!-- Swiper -->
+         <div class="workUs__slider">
+            <div class="swiper" id="workUs__slider">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG1.png" alt="img 1">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG2.png" alt="img 2">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG3.png" alt="img 3">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG4.png" alt="img 4">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG5.png" alt="img 5">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG6.png" alt="img 6">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG7.png" alt="img 7">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG8.png" alt="img 8">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG1.png" alt="img 1">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG2.png" alt="img 2">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG3.png" alt="img 3">
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="workUs__slider_photo">
+                        <img class="workUs__slider_img" src="images/workUsSliderIMG4.png" alt="img 4">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="workUs__arrowBtns">
+               <button type="button" class="prev swiper-button-prev" id="workUsPrev">
+                     <img src="images/sliderLeftArrow.svg" alt="Prev">
+               </button>
+               <button type="button" class="next swiper-button-next" id="workUsNext">
+                     <img src="images/sliderRightArrow.svg" alt="Next">
+               </button>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <footer class="footer">
+      <div class="footer__top">
+         <div class="footer__top_content">
+            <h3 class="footer__top_title">Оставьте заявку — поможем разобраться с вашими задачами</h3>
+            <form action="">
+               <div class="footer__top_form">
+                  <input class="footer__top_inp inp-name" type="text" placeholder="Ваше имя">
+                  <input class="footer__top_inp inp-tel" type="number" placeholder="Ваш телефон">
+                  <textarea class="footer__top_textarea textarea" name="" placeholder="Ваша задача"></textarea>
+                  <div class="footer__top_request">
+                     <div class="footer__top_request-btns">
+                        <button class="footer__top_request-btn" type="submit">оставить заявку</button>
+                        <a class="footer__top_request-link" href="#">
+                           <img class="link-arrow-img" src="images/linkArrow.svg" alt="arrow">
+                        </a>
+                     </div>
+                     <p class="footer__top_request-text">Нажимая кнопку "Оставить заявку" я даю согласие на обработку персональных данных</p>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+
+      <div class="footer__bottom">
+         <div class="footer__bottom_desc">
+            <span class="footer__bottom_numbText">ЕДИННЫЙ НОМЕР</span>
+            <a class="footer__bottom_numbLink" href="tel:8(800)7758343">8 (800) 775 83 43</a>
+            <div class="footer__bottom_social">
+               <h6 class="footer__bottom_social-title">МЫ В СОЦСЕТЯХ: </h6>
+               <div class="footer__bottom_social-items">
+                  <a class="footer__bottom_social-youtube" href="#">YOUTUBE</a>
+                  <a class="footer__bottom_social-vk" href="#">VKONTAKTE</a>
+                  <a class="footer__bottom_social-telegram" href="#">TELEGRAM</a>
+               </div>
+            </div>
+            <ul class="footer__bottom_menu">
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Услуги</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Кейсы</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Акции</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Блог</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Новости</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">О компании</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Контакты</a>
+               </li>
+            </ul>
+         </div>
+
+         <div class="footer__bottom_info">
+            <ul class="footer__bottom_info-item">
+               <li class="footer__bottom_info-title">ТУЛА</li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconLocation.svg" alt="location">
+                  <span class="footer__bottom_info-text">ул. 3-я Трубная д.22, оф.2</span>
+               </li>
+               <li class="footer__bottom_info-list phone-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconPhone.svg" alt="phone">
+                  <span class="footer__bottom_info-text">  
+                     <span class="footer__bottom_info-text">+7 (4872) 25-04-19</span>
+                     <span class="footer__bottom_info-text">+7 (953) 425-69-99</span>
+                  </span>
+               </li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconEmail.svg" alt="email">
+                  <span class="footer__bottom_info-text">manager@dialweb.ru</span>
+               </li>
+            </ul>
+            <ul class="footer__bottom_info-item">
+               <li class="footer__bottom_info-title">КАЛУГА</li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconLocation.svg" alt="location">
+                  <span class="footer__bottom_info-text">ул. Глаголева д.3, 4 этаж</span>
+               </li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconPhone.svg" alt="phone">
+                  <span class="footer__bottom_info-text">+7 (902) 390-45-40</span>
+               </li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconEmail.svg" alt="email">
+                  <span class="footer__bottom_info-text">kisilev@dialweb.ru</span>
+               </li>
+            </ul>
+            <ul class="footer__bottom_info-item">
+               <li class="footer__bottom_info-title">МОСКВА</li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconLocation.svg" alt="location">
+                  <span class="footer__bottom_info-text">ул. Угрешевская, д.2, стр. 31, оф. 116</span>
+               </li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconPhone.svg" alt="phone">
+                  <span class="footer__bottom_info-text">+7 (495) 266-62-87</span>
+               </li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconEmail.svg" alt="email">
+                  <span class="footer__bottom_info-text">salemsk@dialweb.ru</span>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </footer>
+
+   <!-- swipper js -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+   <!-- script js -->
+   <script type="module" src="js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <!-- Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
+   <!-- css -->
+   <link rel="stylesheet" href="scss/services/services.css">
+</head>
+<body>
+
+   <div class="modal" id="appointmentModal">
+      <div class="modal__content">
+         <img class="close-modal" src="images/closeModal.svg" alt="modal close" onclick="closeModal('#appointmentModal')">
+         
+         <h3 class="modal__title">Оставьте заявку — поможем разобраться с вашими задачами</h3>
+         <form action="">
+            <div class="modal__form">
+               <input class="modal__inp inp-name" type="text" placeholder="Ваше имя">
+               <input class="modal__inp inp-tel" type="number" placeholder="Ваш телефон">
+               <textarea class="modal__textarea textarea" name="" placeholder="Ваша задача"></textarea>
+               <div class="modal__request">
+                  <div class="modal__request-btns">
+                     <button class="modal__request-btn" type="submit">оставить заявку</button>
+                     <a class="modal__request-link" href="#">
+                        <img class="link-arrow-img" src="images/linkArrow.svg" alt="arrow">
+                     </a>
+                  </div>
+                  <p class="modal__request-text">Нажимая кнопку "Оставить заявку" я даю согласие на обработку персональных данных</p>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+
+   <nav class="navbar">
+      <div class="navbar__content container">
+         <a class="navbar__logo" href="#">
+            <img class="navbar__logo_img" src="images/logo.svg" alt="logo">
+            <span class="navbar__logo_text">международное агентство полного цикла</span>
+         </a>
+
+         <div class="navbar__menu" id="navbar-menu">
+            <div>
+               <div class="mobile-menu">
+                  <ul class="navbar__menu_item">
+                     <li>
+                        <a class="navbar__menu_link" href="#">Услуги</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">Кейсы</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">Акции</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">Блог</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">Новости</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">О компании</a>
+                     </li>
+                     <li>
+                        <a class="navbar__menu_link" href="#">Контакты</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+
+            <a class="navbar__phoneNumber" href="tel:8(800)7758343">8 (800) 775 83 43</a>
+            <button class="navbar__requestCall" type="button" onclick="openModal('#appointmentModal')">заказать звонок</button>
+            
+            <div class="navbar__socials">
+               <a class="navbar__socials_link whatsapp" href="#">
+                  <img class="whatsapp-img" src="images/whatsappIcon.svg" alt="whatsApp">
+               </a>
+               <a class="navbar__socials_link viber" href="#">
+                  <img class="viber-img" src="images/viberIcon.svg" alt="viber">
+               </a>
+               <button class="navbar__socials_btn" type="button">
+                  <img class="user-img" src="images/navbraUserIcon.svg" alt="user">
+               </button>
+            </div>
+         </div>
+
+         <button class="navbar__mobileIcon" type="button" onclick="openModal('#appointmentModal')">
+            <img src="images/navbarMobilePhone.png" alt="mobile icon">
+         </button>
+         <button class="burger-btn" type="button" onclick="burgerTggle('.burger-btn')">
+            <img class="open-menu" src="images/burgerIcon.svg" alt="burger icon" onclick="burgerOpen('#navbar-menu')">
+            <img class="close-menu" src="images/closeBurger.svg" alt="burger icon" onclick="burgerClose('#navbar-menu')">
+         </button>
+      </div>
+   </nav>
+
+   <div class="container">
+      <a class="crumbs" href="index.html">Главная</a>
+   </div>
+
+   <main>
+      <section class="services">
+         <div class="container">
+            <h1 class="services__title">Услуги</h1>
+            <p class="services__infoText">Справедливые цены за впечатляющий сервис</p>
+            <div class="services__item">
+               <h2 class="services__item_title">Найдем клиентов</h2>
+               <div class="services__item_desc">
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Аудит сайтов</h4>
+                     <p class="services__item_info-price">от 15 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Маркетинговая стратегия</h4>
+                     <p class="services__item_info-price">от 80 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Продвижение сайтов</h4>
+                     <p class="services__item_info-price">от 50 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Контекстная реклама</h4>
+                     <p class="services__item_info-price">от 50 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Таргетированнная реклама</h4>
+                     <p class="services__item_info-price">от 50 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Техническая поддержка</h4>
+                     <p class="services__item_info-price">от 50 000 руб.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="services__item">
+               <h2 class="services__item_title">Создадим или доработаем сайт</h2>
+               <div class="services__item_desc">
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Разработка технического задания</h4>
+                     <p class="services__item_info-price">от 50 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Создание сайтов на готовом решении 1С Битрикс</h4>
+                     <p class="services__item_info-price">от 80 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Создание индивидуальных сайтов под ключ</h4>
+                     <p class="services__item_info-price">от 500 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Технические работы</h4>
+                     <p class="services__item_info-price">от 3 000 руб./ч.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="services__item">
+               <h2 class="services__item_title">Автоматизируем процессы</h2>
+               <div class="services__item_desc">
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Разработка технического задания</h4>
+                     <p class="services__item_info-price">от 50 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Выезд эксперта и диагностика бизнеса</h4>
+                     <p class="services__item_info-price">от 80 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Внедрение CRM</h4>
+                     <p class="services__item_info-price">от 50 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Покупка лицензии Битрикс 24</h4>
+                     <p class="services__item_info-price">от 3 000 руб./ч.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="services__item">
+               <h2 class="services__item_title">Все и сразу</h2>
+               <div class="services__item_desc">
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Комплексный маркетинг</h4>
+                     <p class="services__item_info-price">от 50 000 руб.</p>
+                  </div>
+                  <div class="services__item_info">
+                     <h4 class="services__item_info-title">Прокачка отдела продаж</h4>
+                     <p class="services__item_info-price">от 150 000 руб.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <footer class="footer">
+      <div class="footer__top">
+         <div class="footer__top_content">
+            <h3 class="footer__top_title">Оставьте заявку — поможем разобраться с вашими задачами</h3>
+            <form action="">
+               <div class="footer__top_form">
+                  <input class="footer__top_inp inp-name" type="text" placeholder="Ваше имя">
+                  <input class="footer__top_inp inp-tel" type="number" placeholder="Ваш телефон">
+                  <textarea class="footer__top_textarea textarea" name="" placeholder="Ваша задача"></textarea>
+                  <div class="footer__top_request">
+                     <div class="footer__top_request-btns">
+                        <button class="footer__top_request-btn" type="submit">оставить заявку</button>
+                        <a class="footer__top_request-link" href="#">
+                           <img class="link-arrow-img" src="images/linkArrow.svg" alt="arrow">
+                        </a>
+                     </div>
+                     <p class="footer__top_request-text">Нажимая кнопку "Оставить заявку" я даю согласие на обработку персональных данных</p>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+
+      <div class="footer__bottom">
+         <div class="footer__bottom_desc">
+            <span class="footer__bottom_numbText">ЕДИННЫЙ НОМЕР</span>
+            <a class="footer__bottom_numbLink" href="tel:8(800)7758343">8 (800) 775 83 43</a>
+            <div class="footer__bottom_social">
+               <h6 class="footer__bottom_social-title">МЫ В СОЦСЕТЯХ: </h6>
+               <div class="footer__bottom_social-items">
+                  <a class="footer__bottom_social-youtube" href="#">YOUTUBE</a>
+                  <a class="footer__bottom_social-vk" href="#">VKONTAKTE</a>
+                  <a class="footer__bottom_social-telegram" href="#">TELEGRAM</a>
+               </div>
+            </div>
+            <ul class="footer__bottom_menu">
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Услуги</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Кейсы</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Акции</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Блог</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Новости</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">О компании</a>
+               </li>
+               <li>
+                  <a class="footer__bottom_menu-link" href="#">Контакты</a>
+               </li>
+            </ul>
+         </div>
+
+         <div class="footer__bottom_info">
+            <ul class="footer__bottom_info-item">
+               <li class="footer__bottom_info-title">ТУЛА</li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconLocation.svg" alt="location">
+                  <span class="footer__bottom_info-text">ул. 3-я Трубная д.22, оф.2</span>
+               </li>
+               <li class="footer__bottom_info-list phone-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconPhone.svg" alt="phone">
+                  <span class="footer__bottom_info-text">  
+                     <span class="footer__bottom_info-text">+7 (4872) 25-04-19</span>
+                     <span class="footer__bottom_info-text">+7 (953) 425-69-99</span>
+                  </span>
+               </li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconEmail.svg" alt="email">
+                  <span class="footer__bottom_info-text">manager@dialweb.ru</span>
+               </li>
+            </ul>
+            <ul class="footer__bottom_info-item">
+               <li class="footer__bottom_info-title">КАЛУГА</li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconLocation.svg" alt="location">
+                  <span class="footer__bottom_info-text">ул. Глаголева д.3, 4 этаж</span>
+               </li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconPhone.svg" alt="phone">
+                  <span class="footer__bottom_info-text">+7 (902) 390-45-40</span>
+               </li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconEmail.svg" alt="email">
+                  <span class="footer__bottom_info-text">kisilev@dialweb.ru</span>
+               </li>
+            </ul>
+            <ul class="footer__bottom_info-item">
+               <li class="footer__bottom_info-title">МОСКВА</li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconLocation.svg" alt="location">
+                  <span class="footer__bottom_info-text">ул. Угрешевская, д.2, стр. 31, оф. 116</span>
+               </li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconPhone.svg" alt="phone">
+                  <span class="footer__bottom_info-text">+7 (495) 266-62-87</span>
+               </li>
+               <li class="footer__bottom_info-list">
+                  <img class="footer__bottom_info-icon" src="images/footerIconEmail.svg" alt="email">
+                  <span class="footer__bottom_info-text">salemsk@dialweb.ru</span>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </footer>
+   
+   <script type="module" src="js/services.js"></script>
+</body>
+</html>
